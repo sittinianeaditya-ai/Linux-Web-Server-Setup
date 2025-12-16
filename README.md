@@ -19,6 +19,3 @@ The site presents the installation report and answers technical questions regard
 
 *Technology: HTML5 / CSS3 / Bootstrap 5*.
 
-## 📸 Preview
-![Ubuntu VM Screenshot](link_to_your_image.png)
-*(You can add one of the screenshots from your Word file here)*
