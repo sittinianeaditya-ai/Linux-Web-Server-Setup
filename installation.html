@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation de la VM | SAE S1.03</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">SAE S1.03 <span class="text-info">| Trio04</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link active" href="installation.html">Installation</a></li>
+                <li class="nav-item"><a class="nav-link" href="configuration.html">Configuration</a></li>
+                <li class="nav-item"><a class="nav-link" href="technique.html">Choix & Théorie</a></li>
+                <li class="nav-item"><a class="nav-link" href="projet.html">Projet</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-secondary text-white text-center py-5 mt-5">
+    <div class="container py-4">
+        <h1 class="display-5 fw-bold">Installation de la Machine Virtuelle</h1>
+        <p class="lead">Tutoriel pas-à-pas pour la création du poste de travail Ubuntu.</p>
+    </div>
+</header>
+
+<section class="container my-5">
+
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6 order-md-2">
+            <img src="assets/img/1.png" alt="Configuration Nom et ISO" class="img-fluid rounded shadow border border-2">
+        </div>
+        <div class="col-md-6 order-md-1">
+            <h3 class="text-primary fw-bold">1. Création de la VM</h3>
+            <p>Dans VirtualBox, nous créons une nouvelle machine en cliquant sur "Nouvelle".</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Nom :</strong> Ubuntu (pour identifier la distribution).</li>
+                <li class="list-group-item"><strong>ISO Image :</strong> Sélection de <em>ubuntu-24.04.3-desktop-amd64.iso</em>.</li>
+                <li class="list-group-item"><strong>Type :</strong> Linux / Ubuntu (64-bit).</li>
+            </ul>
+            <div class="alert alert-info mt-3">
+                <small><strong>Note :</strong> Nous cochons l'option pour installer manuellement l'OS ("Skip unattended install") afin de maîtriser le partitionnement.</small>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+            <img src="assets/img/2.png" alt="Configuration Hardware" class="img-fluid rounded shadow border border-2">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-primary fw-bold">2. Allocation des Ressources</h3>
+            <p>Pour supporter l'environnement graphique GNOME et l'IDE WebStorm, nous allouons des ressources conséquentes :</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Mémoire RAM :</strong> 4096 MB (4 Go). Indispensable pour la fluidité.</li>
+                <li class="list-group-item"><strong>Processeurs (CPU) :</strong> 2 cœurs. Permet de gérer le multitâche sans ralentir l'hôte.</li>
+                <li class="list-group-item"><strong>Disque Dur :</strong> 30 Go minimum (Alloué dynamiquement).</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6 order-md-2">
+            <img src="assets/img/10.png" alt="Menu GRUB" class="img-fluid rounded shadow border border-2">
+        </div>
+        <div class="col-md-6 order-md-1">
+            <h3 class="text-primary fw-bold">3. Premier Démarrage (Boot)</h3>
+            <p>
+                Une fois la configuration terminée, nous lançons la machine.
+                Le menu <strong>GNU GRUB</strong> apparaît.
+            </p>
+            <p>
+                Nous sélectionnons l'option : <br>
+                <code>Try or Install Ubuntu</code>
+            </p>
+            <p>Le système va charger les fichiers d'installation en mémoire.</p>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+            <img src="assets/img/3.png" alt="Installation Disque" class="img-fluid rounded shadow border border-2">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-primary fw-bold">4. Installation du Système</h3>
+            <p>Après le choix de la langue (Français) et du clavier, nous arrivons au partitionnement.</p>
+            <p><strong>Choix technique :</strong></p>
+            <div class="card bg-light">
+                <div class="card-body">
+                    Option choisie : <strong>"Effacer le disque et installer Ubuntu"</strong>.
+                </div>
+            </div>
+            <p class="mt-3">
+                Comme il s'agit d'un disque virtuel (VDI) vide, cette option est sûre.
+                Elle formate le disque virtuel pour préparer le système de fichiers Linux (ext4).
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<div class="container mb-5 text-center">
+    <a href="configuration.html" class="btn btn-primary btn-lg">
+        Étape suivante : Configuration & Administration &rarr;
+    </a>
+</div>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-1">IUT de Paris Rives de Seine - Département Informatique</p>
+        <p class="mb-0"><small>&copy; 2025 - SAE S1.03 | Trio04 (Gr107)</small></p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

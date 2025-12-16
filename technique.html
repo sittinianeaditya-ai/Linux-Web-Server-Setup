@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choix Techniques & Théorie | SAE S1.03</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">SAE S1.03 <span class="text-info">| Trio04</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="installation.html">Installation</a></li>
+                <li class="nav-item"><a class="nav-link" href="configuration.html">Configuration</a></li>
+                <li class="nav-item"><a class="nav-link active" href="technique.html">Choix & Théorie</a></li>
+                <li class="nav-item"><a class="nav-link" href="projet.html">Projet</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-secondary text-white text-center py-5 mt-5">
+    <div class="container py-4">
+        <h1 class="display-5 fw-bold">Choix Techniques & Théorie</h1>
+        <p class="lead">Justification de l'architecture et définitions des concepts clés.</p>
+    </div>
+</header>
+
+<section class="container my-5">
+
+    <h2 class="border-bottom pb-2 mb-4 text-primary">1. Justification des Choix</h2>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-6">
+            <div class="card h-100 border-primary shadow-sm">
+                <div class="card-header bg-primary text-white fw-bold">Système d'Exploitation</div>
+                <div class="card-body">
+                    <h5 class="card-title">Ubuntu 24.04 LTS (64-bit)</h5>
+                    <p class="card-text">
+                        Nous avons privilégié une version <strong>LTS (Long Term Support)</strong> pour garantir la stabilité
+                        et la maintenance du poste jusqu'en 2029. L'architecture 64-bit est impérative pour gérer
+                        efficacement les applications gourmandes comme WebStorm.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-success shadow-sm">
+                <div class="card-header bg-success text-white fw-bold">Mémoire Vive (RAM)</div>
+                <div class="card-body">
+                    <h5 class="card-title">4 Go Alloués</h5>
+                    <p class="card-text">
+                        C'est un compromis indispensable. Moins de 4 Go rendrait l'utilisation de l'IDE
+                        <strong>WebStorm</strong> pénible. Nous laissons suffisamment de RAM à la machine hôte
+                        pour ne pas la ralentir.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-warning shadow-sm">
+                <div class="card-header bg-warning text-dark fw-bold">Stockage Disque</div>
+                <div class="card-body">
+                    <h5 class="card-title">Allocation Dynamique</h5>
+                    <p class="card-text">
+                        Plutôt que de bloquer 80 Go d'un coup, nous utilisons l'allocation dynamique.
+                        Le fichier de disque virtuel (.vdi) ne grossit que lorsque nous ajoutons des données,
+                        ce qui économise l'espace réel.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 border-info shadow-sm">
+                <div class="card-header bg-info text-dark fw-bold">Méthode de Déploiement</div>
+                <div class="card-body">
+                    <h5 class="card-title">Déploiement Manuel</h5>
+                    <p class="card-text">
+                        Nous avons choisi de transférer et configurer le site manuellement via le terminal
+                        (commandes <code>cp</code>, <code>rm</code>, <code>sudo</code>). Ce choix pédagogique
+                        renforce notre maîtrise de l'administration système Linux.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="border-bottom pb-2 mb-4 text-primary mt-5">2. Concepts Théoriques</h2>
+    <div class="accordion shadow" id="accordionTheorie">
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    <strong>Q1. Qu'est-ce que la virtualisation ?</strong>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionTheorie">
+                <div class="accordion-body">
+                    C'est une technique permettant de faire tourner plusieurs systèmes d'exploitation (OS) simultanément
+                    sur un seul ordinateur physique. Un logiciel "hyperviseur" partage les ressources réelles (CPU, RAM)
+                    pour créer des machines isolées.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    <strong>Q2. Différences : Émulateur vs Simulateur vs Virtualisation</strong>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionTheorie">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>L'émulateur :</strong> Il imite le matériel (ex: GameBoy sur PC). Il doit tout "traduire", ce qui est lent.</li>
+                        <li><strong>Le simulateur :</strong> Il reproduit un comportement pour l'entraînement (ex: simulateur de vol) sans simuler la technique interne.</li>
+                        <li><strong>La virtualisation :</strong> Elle utilise directement le processeur réel pour exécuter l'OS invité, ce qui est beaucoup plus rapide.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    <strong>Q3. Type de virtualisation (VirtualBox)</strong>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionTheorie">
+                <div class="accordion-body">
+                    VirtualBox utilise une virtualisation de <strong>Type 2 (Hébergée)</strong>.
+                    Le logiciel s'installe comme une application par-dessus le système hôte (Windows/Mac),
+                    contrairement au Type 1 (ex: Stratus/ESXi) qui s'installe directement sur le matériel.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                    <strong>Q4. Où est sauvegardée la machine virtuelle ?</strong>
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionTheorie">
+                <div class="accordion-body">
+                    Elle est stockée physiquement sur le disque dur de la machine hôte sous forme de fichiers.
+                    On trouve généralement un fichier de configuration et un fichier de disque dur virtuel
+                    (format <code>.vdi</code> pour VirtualBox).
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="container mb-5 text-center">
+    <a href="projet.html" class="btn btn-primary btn-lg">
+        Dernière étape : Gestion de Projet &rarr;
+    </a>
+</div>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-1">IUT de Paris Rives de Seine - Département Informatique</p>
+        <p class="mb-0"><small>&copy; 2025 - SAE S1.03 | Trio04 (Gr107)</small></p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

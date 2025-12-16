@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration & Serveur Web | SAE S1.03</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">SAE S1.03 <span class="text-info">| Trio04</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="installation.html">Installation</a></li>
+                <li class="nav-item"><a class="nav-link active" href="configuration.html">Configuration</a></li>
+                <li class="nav-item"><a class="nav-link" href="technique.html">Choix & Théorie</a></li>
+                <li class="nav-item"><a class="nav-link" href="projet.html">Projet</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-secondary text-white text-center py-5 mt-5">
+    <div class="container py-4">
+        <h1 class="display-5 fw-bold">Configuration & Administration</h1>
+        <p class="lead">Gestion des utilisateurs et déploiement du service Web Apache2.</p>
+    </div>
+</header>
+
+<section class="container my-5">
+
+    <h2 class="border-bottom pb-2 mb-4 text-primary">1. Environnement Système</h2>
+
+    <div class="row mb-5">
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <img src="assets/img/4.png" class="card-img-top" alt="Bureau Ubuntu">
+                <div class="card-body">
+                    <p class="card-text text-muted small text-center">Environnement graphique GNOME fonctionnel.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 d-flex flex-column justify-content-center">
+            <h4>Premier Démarrage</h4>
+            <p>
+                Après l'installation des "Invités Additions" (Guest Additions) pour gérer l'affichage plein écran,
+                nous accédons à notre environnement de travail. Le système est stable et prêt pour la configuration.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mb-5 align-items-center bg-light p-4 rounded border">
+        <div class="col-lg-6 order-lg-2">
+            <figure class="mb-3">
+                <img src="assets/img/5.png" alt="Création Groupe et Admin" class="img-fluid rounded shadow border border-dark">
+                <figcaption class="text-muted small mt-1">Création du groupe Trio04 et de l'admin.</figcaption>
+            </figure>
+            <figure class="mb-0">
+                <img src="assets/img/6.png" alt="Ajout utilisateurs" class="img-fluid rounded shadow border border-dark">
+                <figcaption class="text-muted small mt-1">Ajout des membres dans le groupe.</figcaption>
+            </figure>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+            <h4>Gestion des Utilisateurs</h4>
+            <p>Nous avons structuré les accès en créant un groupe dédié au projet.</p>
+
+            <h6 class="fw-bold mt-3">Commandes utilisées :</h6>
+            <ul class="list-group list-group-flush bg-transparent">
+                <li class="list-group-item bg-transparent">
+                    <code>sudo addgroup Trio04</code><br>
+                    <small>Création du groupe de travail.</small>
+                </li>
+                <li class="list-group-item bg-transparent">
+                    <code>sudo adduser admin_Gr107_Trio04</code><br>
+                    <small>Création du compte administrateur principal.</small>
+                </li>
+                <li class="list-group-item bg-transparent">
+                    <code>sudo usermod -aG Trio04 Trio04_1</code><br>
+                    <small>Ajout des utilisateurs (membres du trinôme) au groupe.</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="border-bottom pb-2 mb-4 text-primary mt-5">2. Serveur Web (Apache)</h2>
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <p class="lead">
+                Pour héberger ce rapport, nous avons choisi le serveur HTTP <strong>Apache2</strong>,
+                une référence pour sa robustesse sous Linux.
+            </p>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-light">
+                <div class="card-header fw-bold">Installation</div>
+                <div class="card-body">
+                    <img src="assets/img/7.png" class="img-fluid rounded mb-3 border" alt="Apt install apache2">
+                    <p class="card-text">
+                        Mise à jour des dépôts puis installation du paquet :<br>
+                        <code>sudo apt install apache2</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 bg-light">
+                <div class="card-header fw-bold">Configuration</div>
+                <div class="card-body">
+                    <img src="assets/img/9.png" class="img-fluid rounded mb-3 border" alt="Echo index.html">
+                    <p class="card-text">
+                        Modification de la page d'accueil par défaut pour tester les droits d'écriture dans
+                        <code>/var/www/html/</code>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-header bg-primary text-white fw-bold">Résultat</div>
+                <div class="card-body text-center">
+                    <img src="assets/img/8.png" class="img-fluid rounded mb-3 border" alt="It works">
+                    <p class="card-text fw-bold text-success">
+                        Succès ! Le serveur répond sur le port 80 via l'adresse <code>localhost</code>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="container mb-5 text-center">
+    <a href="technique.html" class="btn btn-primary btn-lg">
+        Étape suivante : Choix Techniques & Théorie &rarr;
+    </a>
+</div>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-1">IUT de Paris Rives de Seine - Département Informatique</p>
+        <p class="mb-0"><small>&copy; 2025 - SAE S1.03 | Trio04 (Gr107)</small></p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

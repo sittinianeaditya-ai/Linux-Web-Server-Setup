@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Projet & Planning | SAE S1.03</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">SAE S1.03 <span class="text-info">| Trio04</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="installation.html">Installation</a></li>
+                <li class="nav-item"><a class="nav-link" href="configuration.html">Configuration</a></li>
+                <li class="nav-item"><a class="nav-link" href="technique.html">Choix & Théorie</a></li>
+                <li class="nav-item"><a class="nav-link active" href="projet.html">Projet</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-secondary text-white text-center py-5 mt-5">
+    <div class="container py-4">
+        <h1 class="display-5 fw-bold">Gestion de Projet</h1>
+        <p class="lead">Planification et suivi des tâches du groupe Trio04.</p>
+    </div>
+</header>
+
+<section class="container my-5">
+
+    <h2 class="border-bottom pb-2 mb-4 text-primary">Planning Prévisionnel (Gantt)</h2>
+
+    <div class="card shadow border-0 mb-5">
+        <div class="card-body p-0">
+            <img src="assets/img/Diagramme_de_Gantt.png" alt="Diagramme de Gantt du projet" class="img-fluid rounded-top w-100">
+        </div>
+        <div class="card-footer bg-light text-muted small">
+            Planning réalisé sur la période de Novembre 2025 à Janvier 2026.
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card h-100 border-start border-4 border-primary shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold text-primary">Phase 1 : Analyse</h5>
+                    <p class="small mb-0">Début Novembre</p>
+                    <hr>
+                    <ul class="list-unstyled small text-muted">
+                        <li>• Analyse du besoin</li>
+                        <li>• Choix de l'OS</li>
+                        <li>• Répartition des rôles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 border-start border-4 border-warning shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold text-warning">Phase 2 : Système</h5>
+                    <p class="small mb-0">Mi-Novembre</p>
+                    <hr>
+                    <ul class="list-unstyled small text-muted">
+                        <li>• Création de la VM</li>
+                        <li>• Installation Ubuntu</li>
+                        <li>• Config. Utilisateurs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 border-start border-4 border-success shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold text-success">Phase 3 : Services</h5>
+                    <p class="small mb-0">Fin Novembre</p>
+                    <hr>
+                    <ul class="list-unstyled small text-muted">
+                        <li>• Install. Apache2</li>
+                        <li>• Tests WebStorm</li>
+                        <li>• Déploiement local</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 border-start border-4 border-info shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold text-info">Phase 4 : Web</h5>
+                    <p class="small mb-0">Décembre - Janvier</p>
+                    <hr>
+                    <ul class="list-unstyled small text-muted">
+                        <li>• Dév. HTML/CSS</li>
+                        <li>• Rédaction contenu</li>
+                        <li>• Livraison finale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="container mb-5 text-center mt-5">
+    <p class="lead mb-4">Vous avez parcouru l'intégralité du rapport.</p>
+    <a href="index.html" class="btn btn-dark btn-lg px-5 shadow-sm">
+        &larr; Revenir à l'Accueil
+    </a>
+</div>
+
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-1">IUT de Paris Rives de Seine - Département Informatique</p>
+        <p class="mb-0"><small>&copy; 2025 - SAE S1.03 | Trio04 (Gr107)</small></p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

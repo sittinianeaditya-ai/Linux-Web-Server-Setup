@@ -1,0 +1,23 @@
+/* Customisation du site SAE */
+
+/* Couleur de fond plus douce pour le body */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ajustement de la marge haute pour ne pas être caché par la navbar fixe */
+body {
+    padding-top: 50px;
+}
+
+/* Petit effet sur les cartes de l'équipe au survol */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Header personnalisé avec un dégradé (Mieux que le bleu par défaut) */
+header {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+}
